@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustavo Maciel – Portfolio Dinâmico</title>
+  <style>
+    :root {
+      --color-primary: #0072ff;
+      --color-secondary: #00c6ff;
+      --color-accent: #ff5722;
+      --color-bg: #f9f9f9;
+      --color-text: #333;
+      --transition-fast: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .top-bar {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      color: white;
+      font-size: 0.9em;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar a:hover {
+      opacity: 0.8;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--color-accent);
+      transition: width var(--transition-fast);
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      width: 100%;
+      background-color: #333;
+      height: 70vh;
+      background: url('hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      animation: fadeInUp 1s ease-out;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      background-color: #333;
+
+    }
+
+    .hero-content::after {
+
+      background: var(--color-accent);
+
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .hero-content a {
+      background: var(--color-accent);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background var(--transition-fast);
+    }
+
+    .hero-content a:hover {
+      background: #e64a19;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--color-primary);
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--color-accent);
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <a href="tel:+5554996256837">📞 (54) 99625-6837</a>
+    <a href="mailto:gusfqm@gmail.com">✉ gusfqm@gmail.com</a>
+    <a href="https://wa.me/5554996256837" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Gustavo Maciel">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#idiomas">Idiomas</a></li>
+        <li><a href="#extra">Mais</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Olá, eu sou Gustavo Maciel</h1>
+      <p>Desenvolvedor Júnior apaixonado por tecnologia e inovação.</p>
+      <a href="#sobre">Saiba mais sobre mim</a>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <h2>Sobre Mim</h2>
+    <p style="max-width:700px; margin:0 auto; text-align:center;">
+      Sou Gustavo Francisco de Quadros Maciel, apaixonado por tecnologia e em constante aprendizado.
+      Atualmente trabalho como Assistente Administrativo Comercial na Empresa Comercial Zaffari Ltda e curso Ciência da
+      Computação na Atitus Educação, com previsão de conclusão em 2028.
+      Tenho experiência em análise de dados, otimização de processos e estou focado em seguir carreira como
+      desenvolvedor de software.
+    </p>
+  </section>
+
+  <section class="section" id="formacao">
+    <h2>Formação Acadêmica</h2>
+    <ul style="max-width:700px; margin:0 auto;">
+      <li><strong>Ciência da Computação</strong> – Atitus Educação (Previsão: 12/2028)</li>
+      <li><strong>Nanodegree:</strong> Desenvolvimento de Aplicações Júnior – Atitus/2024</li>
+      <li><strong>Ensino Médio:</strong> Escola Monteiro Lobato (2021–2023)</li>
+    </ul>
+  </section>
+
+  <section class="section" id="experiencia">
+    <h2>Experiência Profissional</h2>
+    <ul style="max-width:700px; margin:0 auto;">
+      <li><strong>Assistente Administrativo Comercial</strong> – Empresa Comercial Zaffari Ltda (Abr/2024 – atual)<br>
+        • Mapeamento de processos de cadastro<br>
+        • Gerenciamento de valores de multas e cobranças<br>
+        • Desenvolvimento de relatórios de venda
+      </li><br>
+      <li><strong>Aprendiz – Assistente Administrativo Comercial</strong> – Empresa Comercial Zaffari Ltda (Mai/2023 –
+        Mar/2024)<br>
+        • Análise de dados para desenvolvimento de vendas<br>
+        • Participação em projetos informativos internos
+      </li><br>
+      <li><strong>Aprendiz – Assistente Administrativo</strong> – Comércio de Medicamentos Brair Ltda (Abr/2021 –
+        Nov/2022)<br>
+        • Apoio logístico<br>
+        • Auxílio na implementação de sistema de gestão de estoque
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="idiomas">
+    <h2>Idiomas</h2>
+    <ul style="max-width:700px; margin:0 auto;">
+      <li>Português – Fluente</li>
+      <li>Inglês – Fluente</li>
+      <li>Espanhol – Iniciante</li>
+    </ul>
+  </section>
+
+  <section class="section" id="extra">
+    <h2>Informações Adicionais</h2>
+    <ul style="max-width:700px; margin:0 auto;">
+      <li>Conhecimento básico em: Python, HTML, CSS, JavaScript e Figma</li>
+      <li>Pacote Office, Outlook e Google Meeting</li>
+      <li>Residência: Bairro Planaltina, Passo Fundo – RS</li>
+      <li>GitHub: <a href="https://github.com/gqmfrancisco" target="_blank">github.com/gqmfrancisco</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Gustavo Francisco de Quadros Maciel. Todos os direitos reservados.
+  </footer>
+</body>
+
+</html>
